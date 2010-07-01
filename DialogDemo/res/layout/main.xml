@@ -5,8 +5,45 @@
     android:layout_height="fill_parent"
     >
 <TextView  
+	android:id="@+id/txtOutput"
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content" 
-    android:text="@string/hello"
+    android:text=""
     />
+<Button
+	android:id="@+id/btnAlertBox1"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Alert Box 1"
+	/>
+<Button
+	android:id="@+id/btnAlertBox2"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Alert Box 2"
+	/>
+<Button
+	android:id="@+id/btnList"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Alert List"
+	/>
+<Button
+	android:id="@+id/btnListRadio"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="Alert List Radio"
+	/>
+<Button
+	android:id="@+id/btnProgress"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="Progress Wheel"
+	/>
+<Button
+	android:id="@+id/btnProgressBar"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="Progress Bar"
+	/>
 </LinearLayout>
