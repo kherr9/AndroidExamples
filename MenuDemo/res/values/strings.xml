@@ -2,4 +2,21 @@
 <resources>
     <string name="hello">Hello World, MenuDemo!</string>
     <string name="app_name">MenuDemo</string>
+<string-array name="Countries">
+<item>USA</item>
+<item>France</item>
+<item>Germany</item>
+<item>Poland</item>
+<item>Russia</item>
+<item>Mexico</item>
+<item>Brazil</item>
+<item>UK</item>
+<item>China</item>
+<item>Korea</item>
+</string-array>
+<string-array name="menu">
+<item>Edit</item>
+<item>Delete</item>
+<item>Send</item>
+</string-array>
 </resources>

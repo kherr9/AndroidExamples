@@ -1,5 +1,7 @@
 package com.khtbone;
 
+import java.util.Arrays;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -14,7 +16,10 @@ public class MenuDemo extends Activity {
 	
 	private static final int MENU_NEW_GAME = 0;
 	private static final int MENU_QUIT = 1;
+	private static final int EDIT_ID = 2;
+	private static final int DELETE_ID = 3;
 	
+	private String[] _countries = null;
 	private TextView _txtOutput = null;
 	
 	
@@ -24,8 +29,19 @@ public class MenuDemo extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
+        //	init list
+        _countries = getResources().getStringArray(R.array.Countries);
+        Arrays.sort(_countries);
+        
+        ListView list = (ListView) findViewById(R.id.lvList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.listitem,_countries);
+        list.setAdapter(adapter);
+        registerForContextMenu(list);
+        
+        //	get ref to text views
         _txtOutput = (TextView) findViewById(R.id.txtOutput);
 
+        
     }
     
     /* Creates the menu items */
@@ -49,4 +65,29 @@ public class MenuDemo extends Activity {
         }
         return false;
     }
+    
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+		if(v.getId() ==R.id.lvList){
+			AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
+			menu.setHeaderTitle(_countries[info.position]);
+			String[] menuItem = getResources().getStringArray(R.array.menu);
+			for(int i = 0; i < menuItem.length; i++){
+				menu.add(Menu.NONE,i,i,menuItem[i]);
+			}
+		}
+	}
+    
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+    	  AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+    	  int menuItemIndex = item.getItemId();
+    	  String[] menuItems = getResources().getStringArray(R.array.menu);
+    	  String menuItemName = menuItems[menuItemIndex];
+    	  String listItemName = _countries[info.position];
+    	  
+    	  _txtOutput.setText(String.format("Select %s for item %s",menuItemName,listItemName));
+    	  return true;
+	}
+
 }
