@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
@@ -48,6 +49,12 @@ public class MenuDemo extends Activity {
     
     /* Creates the menu items */
     public boolean onCreateOptionsMenu(Menu menu) {
+    	
+    	MenuInflater inflater = getMenuInflater();
+    	inflater.inflate(R.menu.options_menu, menu);
+    	
+    	return true;
+    	/*
         menu.add(0, MENU_NEW_GAME, 0, "New Game");
         menu.add(0, MENU_QUIT, 0, "Quit");
         
@@ -57,6 +64,7 @@ public class MenuDemo extends Activity {
         
         
         return true;
+        */
     }
 
     /* Handles item selections */
