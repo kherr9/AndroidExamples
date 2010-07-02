@@ -16,8 +16,6 @@ public class MenuDemo extends Activity {
 	
 	private static final int MENU_NEW_GAME = 0;
 	private static final int MENU_QUIT = 1;
-	private static final int EDIT_ID = 2;
-	private static final int DELETE_ID = 3;
 	
 	private String[] _countries = null;
 	private TextView _txtOutput = null;
