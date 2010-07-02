@@ -8,6 +8,7 @@ import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.widget.*;
 import android.widget.AdapterView.AdapterContextMenuInfo;
@@ -16,6 +17,9 @@ public class MenuDemo extends Activity {
 	
 	private static final int MENU_NEW_GAME = 0;
 	private static final int MENU_QUIT = 1;
+	private static final int MENU_COUNTRIES = 2;
+	private static final int SUBMENU_NEW = 100;
+	private static final int SUBMENU_DELETE = 101;
 	
 	private String[] _countries = null;
 	private TextView _txtOutput = null;
@@ -46,11 +50,18 @@ public class MenuDemo extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.add(0, MENU_NEW_GAME, 0, "New Game");
         menu.add(0, MENU_QUIT, 0, "Quit");
+        
+        SubMenu fileMenu = menu.addSubMenu(0,MENU_COUNTRIES,0,"Country");
+        fileMenu.add(0,SUBMENU_NEW,0,"New");
+        fileMenu.add(0,SUBMENU_DELETE,0,"Delete");
+        
+        
         return true;
     }
 
     /* Handles item selections */
     public boolean onOptionsItemSelected(MenuItem item) {
+    	
         switch (item.getItemId()) {
         case MENU_NEW_GAME:
         	_txtOutput.setText("Selected New Game");
@@ -60,6 +71,17 @@ public class MenuDemo extends Activity {
         	_txtOutput.setText("Selected Quit");
             //quit();
             return true;
+        case MENU_COUNTRIES:
+        	_txtOutput.setText("Selected Country");
+        	return true;
+    	case SUBMENU_NEW:
+    		_txtOutput.setText("Selected New Country");
+    		return true;
+    	case SUBMENU_DELETE:
+    		_txtOutput.setText("Selected Delete Country");
+    		return true;
+    	default:
+    		_txtOutput.setText("unknown menu");
         }
         return false;
     }
