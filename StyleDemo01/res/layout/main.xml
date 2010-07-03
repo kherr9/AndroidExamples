@@ -9,4 +9,33 @@
     android:layout_height="wrap_content" 
     android:text="@string/hello"
     />
+<TextView  
+	style="@style/CodeFont"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="CodeFont"
+    />
+<TextView  
+	style="@style/GreenFont"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="GreenFont"
+    />
+<TextView  
+	style="@style/CodeFont.Red"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="CodeFont.Red"
+    />
+<TextView  
+	style="@style/CodeFont.Red.Big"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="CodeFont.Red.Big"
+    />    
+<EditText
+	style="@style/Numbers"
+	android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+	/>
 </LinearLayout>
