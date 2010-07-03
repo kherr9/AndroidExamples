@@ -9,4 +9,16 @@
     android:layout_height="wrap_content" 
     android:text="@string/hello"
     />
+<Button
+	android:id="@+id/btnToast"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="Toast It"
+/>
+<Button
+	android:id="@+id/btnSimpleNotification"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="Create Notification"
+/>
 </LinearLayout>
