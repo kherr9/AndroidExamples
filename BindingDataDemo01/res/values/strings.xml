@@ -2,4 +2,12 @@
 <resources>
     <string name="hello">Hello World, BindingDataDemo01!</string>
     <string name="app_name">BindingDataDemo01</string>
+<string-array name="colors">
+<item>Red</item>
+<item>Yellow</item>
+<item>Blue</item>
+<item>Teal</item>
+<item>Black</item>
+<item>White</item>
+</string-array>
 </resources>
